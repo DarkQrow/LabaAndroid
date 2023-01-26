@@ -1,0 +1,258 @@
+@startuml
+class ak.try1.GamePlay {
+- Bitmap player1
+- Bitmap player2
+- Bitmap icon1
+- Bitmap icon2
+- Bitmap diceroll
+- Bitmap rolling
+- Bitmap dice
+- Bitmap one
+- Bitmap two
+- Bitmap three
+- Bitmap four
+- Bitmap five
+- Bitmap six
+- Bitmap finishturn
++ Bitmap playersign
++ Bitmap computersign
++ {static} int scorePlayer
++ {static} int scoreComputer
++ {static} TextView textview
++ {static} TextView textview2
+- Bitmap background
+- SurfaceHolder holder
+- GameThread gameThread
+- Player myplayer
+- Computer comp
+- Manager manager
++ {static} int number
+- LinearLayout layout
++ {static} int money1
++ {static} int money2
++ {static} int count
++ {static} int dicenumber
+- {static} int dicenumber1
+- {static} int dicenumber2
+- MediaPlayer mp
++ {static} int[] money
++ {static} int[] rent
++ {static} int[] positionXArray
++ {static} int[] positionYArray
++ {static} boolean[] playercompany
++ {static} boolean[] computercompany
++ {static} String[] company
++ {static} String[] company_owner
++ {static} boolean playerturn
++ {static} boolean computerturn
++ {static} int z
++ {static} String text
++ {static} int ax
++ {static} int diffX
++ {static} int diffY
++ {static} int maxH
++ {static} int maxW
++ {static} Dialog myDialog
++ {static} Dialog playerDialog
++ {static} Dialog computerDialog
++ {static} ImageView playerImage
++ {static} TextView status
++ {static} TextView smscomp
++ {static} Button Buy
++ {static} Button click
++ {static} Button pay_Rent
++ boolean Hello
++ {static} TextView playerBal
++ {static} TextView companyPlayer
++ {static} TextView playername
+~ WindowManager wm
+~ Display display
++ <<Create>> GamePlay(Context)
++ void onDraw(Canvas)
++ {static} float convertDpToPixel(float)
++ void play()
++ void stop()
+# void checkMovement(float,float)
++ void gameOver()
++ void computerTurn()
++ void check_RentIncrement()
++ boolean onTouchEvent(MotionEvent)
+}
+class ak.try1.Player {
+- Bitmap player1
+- GamePlay game
++ {static} int positionX
++ {static} int positionY
+- TextView textview
+- int x
+- int y
++ {static} int playerPos
++ <<Create>> Player(GamePlay,Bitmap)
+- void update()
++ void onDraw(Canvas)
++ {static} float convertDpToPixel(float)
+}
+class ak.try1.Computer {
+- Bitmap player2
+- GamePlay game
++ {static} int posX
++ {static} int posY
+- TextView textview
+- int x
+- int y
++ {static} int playerPos
++ <<Create>> Computer(GamePlay,Bitmap)
+- void update()
++ void onDraw(Canvas)
++ {static} float convertDpToPixel(float)
+}
+class ak.try1.Manager {
+- GamePlay game
+- Bitmap rolling
+- Bitmap finish
++ <<Create>> Manager()
++ <<Create>> Manager(GamePlay,Bitmap,Bitmap)
++ void onDraw(Canvas)
+}
+class ak.try1.R {
+}
+class ak.try1.R.attr {
+}
+class ak.try1.R.dimen {
++ {static} int activity_horizontal_margin
++ {static} int activity_vertical_margin
+}
+class ak.try1.R.drawable {
++ {static} int abc
++ {static} int bg
++ {static} int bgmenu
++ {static} int buttonleft
++ {static} int buttonright
++ {static} int buttonview
++ {static} int dice3d
++ {static} int dice3droll
++ {static} int finish
++ {static} int five
++ {static} int four
++ {static} int icon1
++ {static} int icon2
++ {static} int index
++ {static} int index1
++ {static} int one
++ {static} int playbutton
++ {static} int playersign
++ {static} int rolling
++ {static} int six
++ {static} int splashimg
++ {static} int three
++ {static} int two
+}
+class ak.try1.R.id {
++ {static} int about
++ {static} int action_settings
++ {static} int click
++ {static} int exit
++ {static} int imageViewPlayer
++ {static} int nameButton
++ {static} int name_of_player
++ {static} int pay_Rent
++ {static} int play
++ {static} int popButton
++ {static} int scrollView
++ {static} int sms
++ {static} int splash
++ {static} int status_id
++ {static} int textView
++ {static} int textView18
++ {static} int textView3
++ {static} int textView4
++ {static} int textView5
+}
+class ak.try1.R.layout {
++ {static} int activity_main
++ {static} int activity_splash
++ {static} int compdialog
++ {static} int dialogfile
++ {static} int nameinput
++ {static} int playerprofile
+}
+class ak.try1.R.menu {
++ {static} int menu_leaderboard
++ {static} int menu_main
++ {static} int menu_splash
+}
+class ak.try1.R.mipmap {
++ {static} int bgscore
++ {static} int ic_launcher
++ {static} int lauicon
++ {static} int player_1
++ {static} int player_2
+}
+class ak.try1.R.raw {
++ {static} int shake_dice
+}
+class ak.try1.R.string {
++ {static} int action_settings
++ {static} int app_name
++ {static} int hello_world
++ {static} int title_activity_leaderboard
++ {static} int title_activity_splash
+}
+class ak.try1.R.style {
++ {static} int AppTheme
+}
+class ak.try1.BuildConfig {
++ {static} boolean DEBUG
++ {static} String APPLICATION_ID
++ {static} String BUILD_TYPE
++ {static} int VERSION_CODE
++ {static} String VERSION_NAME
+}
+class ak.try1.ApplicationTest {
++ <<Create>> ApplicationTest()
+}
+class ak.try1.test.BuildConfig {
++ {static} boolean DEBUG
++ {static} String APPLICATION_ID
++ {static} String BUILD_TYPE
++ {static} String FLAVOR
++ {static} int VERSION_CODE
++ {static} String VERSION_NAME
+}
+class ak.try1.MainActivity {
++ {static} String playerName
+# void onCreate(Bundle)
++ void play(View)
++ void about(View)
++ {static} void exit(View)
+}
+class ak.try1.Splash {
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+}
+class ak.try1.GameThread {
+- GamePlay game
+- boolean running
++ <<Create>> GameThread(GamePlay)
++ void setRunning(boolean)
++ void run()
+}
+
+
+android.view.SurfaceView <|-- ak.try1.GamePlay
+ak.try1.R +.. ak.try1.R.attr
+ak.try1.R +.. ak.try1.R.dimen
+ak.try1.R +.. ak.try1.R.drawable
+ak.try1.R +.. ak.try1.R.id
+ak.try1.R +.. ak.try1.R.layout
+ak.try1.R +.. ak.try1.R.menu
+ak.try1.R +.. ak.try1.R.mipmap
+ak.try1.R +.. ak.try1.R.raw
+ak.try1.R +.. ak.try1.R.string
+ak.try1.R +.. ak.try1.R.style
+android.test.ApplicationTestCase <|-- ak.try1.ApplicationTest
+android.app.Activity <|-- ak.try1.MainActivity
+android.app.Activity <|-- ak.try1.Splash
+ak.try1.Thread <|-- ak.try1.GameThread
+@enduml
