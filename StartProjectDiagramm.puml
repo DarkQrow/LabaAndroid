@@ -1,0 +1,14 @@
+@startuml
+class com.study.labaandroid.ExampleUnitTest {
++ void addition_isCorrect()
+}
+class com.study.labaandroid.ExampleInstrumentedTest {
++ void useAppContext()
+}
+class com.study.labaandroid.MainActivity {
+# void onCreate(Bundle)
+}
+
+
+androidx.appcompat.app.AppCompatActivity <|-- com.study.labaandroid.MainActivity
+@enduml
