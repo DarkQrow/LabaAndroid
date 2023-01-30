@@ -1,7 +1,7 @@
 В листинге 10.6 приведена расширенная заготовка сервиса. Наш сервис при запуске и останове выводит
 соответствующее уведомление.
 
-<center>Листинг 10.6. Расширенная заrотовка сервиса</center>
+Листинг 10.6. Расширенная заrотовка сервиса
 
   ```Java
 package com.example.den.myfirstservice;
@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class MyService extends Service {
     @Override
     public IBinder onВind(Intent arg0) {
-// TODO Auto-generated method stuЬ
+// TODO Auto-generated method stub
         return null;
     }
 
@@ -39,7 +39,7 @@ public class MyService extends Service {
 МРЗ-файл. Создайте новое приложение, поместите в каталог `res\raw` какой-либо МРЗ-файл на ваше
 усмотрение. Пусть он называется `music.mpЗ`. Добавьте новый класс и назовите его `MediaService`. Код
 этого класса показан в листинге 10.7.
-<center>Листинг 10.7. Код класса MediaService</center>
+Листинг 10.7. Код класса MediaService
 
 ```Java
 package com.example.den.soundserviceapp;
@@ -119,7 +119,7 @@ public class MediaService extends Service {
   активность. Сначала добавим в разметку две кнопки управления сервисом: первая кнопка будет
   запускать сервис, вторая - останавливать (листинг 10.8).
 
-<center>Листинг 10.8 Разметка приложения</center>
+Листинг 10.8 Разметка приложения
 
 ```xml
 <?xml version="l.O" encoding="utf-8"?>
@@ -137,7 +137,7 @@ public class MediaService extends Service {
 
 Код активности приведен в листинге 10.9.
 
-<center>Листинг 10.9. Код активности</center>
+Листинг 10.9. Код активности
 
 ```Java
 package com.exarmple.den.soundserviceapp;
@@ -223,7 +223,7 @@ http://developer.android.com/reference/android/content/lntent.html.
 
 Итак, начнем создавать наше приложение. Код основной деятельности МainActivity представлен в файле
 MainActivity.java (листинг 10.10).
-<center>Листинг 10.10</center>
+Листинг 10.10
 
 ```Java
 package com.samples.my_receiver;
@@ -274,7 +274,7 @@ registerReceiver(iReceiver,iFilter);
 Первый параметр - это сам приемник, второй - фильтр намерений. Вот теперь надо создать
 класс `MyReceiver`. Как это сделать с помощью Android Studio, вы уже знаете, поэтому привожу сразу
 код класса (листинг 10.11).
-<center>Листинг 10.11</center>
+Листинг 10.11
 
 ```Java
 package com.samples.my_receiver;
@@ -308,7 +308,7 @@ public class MyReceiver extends BroadcastReceiver {
 package com.samples.my_receiver;
 ``` 
 
-<center>* * *</center>
+* * *
 
 В следующей главе мы подробно рассмотрим взаимодействие с
 аппаратными средст.вами смартфона/планшета. 
