@@ -1,25 +1,42 @@
 package com.study.labaandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationCompat.Builder;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
-
+@SuppressWarnings("java:S125")
 public class MainActivity extends AppCompatActivity {
-    public final String directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)+"/NIR/";
+
+    private static final String DIRECTORY = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)+"/NIR/";
+    private static final int NOTIFICATION_ID = 25;
+    private static final String CHANNEL_ID = "chanelID";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        createNotificationChannel();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
     public void galleryClick(View v){
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        Uri uri = Uri.parse(directory);
+        Uri uri = Uri.parse(DIRECTORY);
         intent.setDataAndType(uri, "*/*");//specify your type
         startActivity(Intent.createChooser(intent, "Open folder"));
+
         //startActivity(Intent.createChooser(intent, "Open folder"));
 
     }
