@@ -21,7 +21,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="20dp"
         android:background="@null"
-        android:onClick="GalleryClick"
+        android:onClick="galleryClick"
         android:scaleType="centerInside"
         android:src="@drawable/gallerybtn" />
 
@@ -32,7 +32,7 @@
         android:layout_gravity="bottom|center"
         android:layout_marginBottom="20dp"
         android:background="@null"
-        android:onClick="PhotoClick"
+        android:onClick="photoClick"
         android:scaleType="centerInside"
         android:src="@drawable/photobtn" />
     <ImageButton
@@ -42,7 +42,7 @@
         android:layout_gravity="top"
         android:layout_marginStart="10dp"
         android:background="@null"
-        android:onClick="ToolbarClick"
+        android:onClick="toolbarClick"
         android:scaleType="centerInside"
         android:src="@drawable/toolbarbtn" />
 
