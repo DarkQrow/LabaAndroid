@@ -1,14 +1,15 @@
 package com.study.labaandroid;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
-
-import java.io.IOException;
+import android.widget.LinearLayout;
 
 public class ToolBarActivity extends Activity {
+    private boolean backgraoundCheck = false;
     public final String directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) + "/NIR/";
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +26,16 @@ public class ToolBarActivity extends Activity {
         startActivity(intent);
     }
 
-    public void CheckPhoto(View v) throws IOException {
-
-
+    @SuppressLint("UseCompatLoadingForDrawables")
+    public void changeBackground(View v) {
+        LinearLayout layout = findViewById(R.id.toolbarlayout);
+        if (!backgraoundCheck) {
+            layout.setBackground(getDrawable(R.drawable.toolbarbackground_2));
+            backgraoundCheck = true;
+        } else {
+            layout.setBackground(getDrawable(R.drawable.toolbarbackground_1));
+            backgraoundCheck = false;
+        }
     }
 
 }

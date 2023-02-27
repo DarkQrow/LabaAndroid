@@ -6,11 +6,11 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/mainlayout"
+        android:id="@+id/toolbarlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/toolbarbackground"
+        android:background="@drawable/toolbarbackground_1"
         tools:context=".MainActivity">
 
         <ImageButton
@@ -42,8 +42,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:backgroundTint="#FFFFFF"
-            android:onClick="CheckPhoto"
-            android:text="Выбрать изображение"
+            android:onClick="changeBackground"
+            android:text="Изменить фон..."
             android:textColor="#000000" />
 
         <TextView
