@@ -16,6 +16,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.drawable.ColorDrawable;
 import android.hardware.Camera;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -123,6 +124,12 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
         }
         preview.setLayoutParams(lp);
         camera.startPreview();
+    }
+    public void galleryClick(View v) {
+        Intent intent = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        Uri uri = Uri.parse(DIRECTORY);
+        intent.setDataAndType(uri, "image/*");//specify your type
+        startActivity(Intent.createChooser(intent, "Open folder"));
     }
 
 
